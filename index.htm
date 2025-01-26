@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>HTML to PDF</title>
+   <style>
+   * {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+   }
+
+   body {
+    margin: 0;
+    padding: 0;
+   }
+
+   h1 {
+    text-align: center;
+    margin: 40px auto;
+    font-size: 50px;
+   }
+   h2 {
+    text-align: right;
+    font-size: 30px;
+   }
+   .container-fluid {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1000px;
+   }
+   .container {
+    max-width: 500px;
+    width: 50%;
+    float: left;
+    margin: 0 auto;
+    border: none;
+    padding: 20px;
+   }
+   .container1 {
+    max-width: 1000px;
+    width: 100%;
+    float: left;
+    margin: 0 auto;
+    border: none;
+    padding: 20px;
+   }
+   fieldset {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #cccccc;
+    font-size: 16px;
+   }
+   legend {
+    margin-left: 20px;
+    font-size: 20px;
+   }
+   input {
+    width: auto;
+    margin: 10px;
+    padding: 5px;
+    font-size: 18px;
+   }
+   h3 {
+    margin: 5px 0;
+   }
+   table {
+    width: 100%;
+    margin-top: 20px;
+    border: none;
+    text-align: center;
+   }
+   table td,
+   table th {
+    padding: 5px;
+    margin: 0;
+    border: 1px solid #000000;
+   }
+   table tr td:last-child {
+    text-align: right;
+   }
+
+   ul li {
+    padding: 5px;
+    margin: 10px 0;
+   }
+  </style>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ </head>
+ <body>
+  <h1>EzviNet Technology</h1>
+  <div class="container-fluid">
+   <div class="container">
+    <div class="part1">
+     <fieldset>
+      <legend>Personal Information</legend>
+      Full Name: <input type="text" id="name" /> <br />
+
+      Your Email: <input type="text" id="email" /><br />
+      Your Mobile: <input type="text" id="mobile" /><br />
+	  
+	  Your Site Name: <input type="text" id="namename" /><br />
+     </fieldset>
+    </div>
+
+    <div class="part2">
+     <fieldset>
+      <legend>Bill</legend>
+       
+  Shoket Outlet wiring ප්ලග් ඒකකයක් වයරින් කිරීම (13A-1): <input type="text" id="kachori" /><br />
+  WiFi Cmera wall mount an Phone Setup වයිෆයි කැමරා  සවි කිරීම සහ  දුරකථනයට සැකසුම: <input type="text" id="vadapav" /><br />
+ WiFi Cmera  connect to dvr, nvr වයිෆයි කැමරා එන්.වී.ආර්, ඩී .වී.ආර් වෙත සම්බන්ධ කිරීම: <input type="text" id="d" /><br />
+ Network Cable wiring  ඩේට ඒකකයක් වයරින් කිරීම: <input type="text" id="e" /><br />
+ Installation setup Connecting one camera  වයිෆයි එන්.වී.ආර සැකසුම සහ1කැමරාවක් සම්බන්ධකිරීම (wifi nvr): <input type="text" id="f" /><br />
+       Device Connect   වයිෆයි  එන්.වී.ආර් දුරකථනයට සැකසුම : <input type="text" id="fz" /><br />
+ WiFi NVR security box  Mounting වයිෆයි එන්.වී.ආර්  ආරක්ෂක පෙට්ටිය සවි කිරීම (Steel 3u / 5u): : <input type="text" id="g" /><br />
+      Video Screen Mount 4m distens වීඩියෝ තිර සවි කිරීම මීටර් 4 දුර (TV / Monitor)  <input type="text" id="gz" /><br />
+ wall cutting or undergroung wiring බිත්ති කපා හෝ භූගතව වයරින් කිරීම (one man one day): <input type="text" id="h" /><br />
+If the distance from one camera to another is more than 12 meters එක් කැමරාවක සිට තවත් කැමරාවකට දුර මීටර් 12 ට වඩා වැඩි නම් (1m) : <input type="text" id="i" /><br /> 
+       
+
+
+
+ 
+	   
+     </fieldset>
+    </div>
+   </div>
+
+   <div class="container1">
+    <fieldset>
+     <legend>Welcome</legend>
+     <h3>My Name:<span id="name2"></span></h3>
+     <h3>Email: <span id="email2"></span></h3>
+     <h3>Mobile: <span id="mobile2"></span></h3>
+	 
+	 <h3>Site Name: <span id="namename2"></span></h3>
+     <table border="1">
+      <thead>
+       <tr>
+        
+        <th>Details </th>
+        <th>1Price</th>
+		<th>Quantity </th>
+        <th>Price</th>
+         </tr>
+      </thead>
+      <tbody id="bill">
+      </tbody>
+     </table>
+    </fieldset>
+	<h2>Total Amout: Rs. <span id="amount">0</span></h2>
+	<legend>EzviNet Technologhy</legend>
+   
+   </div>
+   <button style = "background-color: gray ; width;100px; height:30px;" class="download">Download PDF</button> 
+    <button style = "background-color: gray ; width;100px; height:30px;" onclick="document.location='https://ezvinet.000webhostapp.com/'"> EzviNet</button> 
+    <!-- Adding a script to listen for the button click event and to convert the HTML element to a PDF and download it -->
+    
+  </div>
+  <script>
+   var 
+    Kachori = 2000,
+    AVadapav = 2000,
+	 Ad = 1000,
+ Ae = 2500,
+ Af = 1000,
+ Afz = 1000,
+ Ag = 1000,
+ Agz = 1000,
+ Ah = 4500,
+ Ai = 250;
+ 
+ 
+ 
+
+
+    
+  var 
+    kachori_q = 0,
+    vadapav_q = 0,
+   d_q = 0,
+ e_q = 0,
+ f_q = 0,
+ fz_q = 0,
+ g_q = 0,
+ gz_q = 0,
+ h_q = 0,
+ i_q = 0;
+ 
+
+ 
+
+   var name = "",
+    email = "";
+   var 
+    kachoriBill = "",
+    vadapavBill = "",
+    dBill = "",
+	eBill = "",
+	fBill = "",
+	fzBill = "",
+ gBill = "",
+ gzBill = "",
+ hBill = "",
+ iBill = "";
+ 
+ 
+ 
+
+   var total_amount = 0;
+   document.getElementById("name").addEventListener("keyup", function () {
+    document.getElementById("name2").innerHTML = this.value;
+   });
+
+   document.getElementById("email").addEventListener("keyup", function () {
+    document.getElementById("email2").innerHTML = this.value;
+   });
+
+   document.getElementById("mobile").addEventListener("keyup", function () {
+    document.getElementById("mobile2").innerHTML = this.value;
+   });
+   
+   document.getElementById("namename").addEventListener("keyup", function () {
+    document.getElementById("namename2").innerHTML = this.value;
+   });
+   
+  
+
+  
+
+   document.getElementById("kachori").addEventListener("keyup", function() {
+    if (this.value == "" || this.value == 0) {
+        kachoriBill = "";
+        kachori_q = 0;
+        showBill();
+    } else {
+        kachori_q = this.value;
+        kachoriBill = "<tr><td>Shoket Outlet wiring ප්ලග් ඒකකයක් වයරින් කිරීම (13A-1)</td><td>Rs. " + Kachori + "</td><td>" + kachori_q + "</td><td>" + Kachori + "x" + kachori_q + " = " + Kachori * kachori_q + "</td></tr>";
+        showBill();
+    }
+});
+
+
+   
+document.getElementById("vadapav").addEventListener("keyup", function() {
+    if (this.value == "" || this.value == 0) {
+        vadapavBill = "";
+        vadapav_q = 0;
+        showBill();
+    } else {
+        vadapav_q = this.value;
+        vadapavBill = "<tr><td>WiFi Cmera wall mount an Phone Setup වයිෆයි කැමරා  සවි කිරීම සහ  දුරකථනයට සැකසුම</td><td>Rs. " + AVadapav + "</td><td>" + vadapav_q + "</td><td>" + AVadapav + "x" + vadapav_q + " = " + AVadapav * vadapav_q + "</td></tr>";
+        showBill();
+    }
+});
+
+   document.getElementById("d").addEventListener("keyup", function () {
+    if (this.value == "" || this.value == 0) {
+     dBill = "";
+     d_q = 0;
+     showBill();
+    } else {
+     d_q = this.value;
+     dBill = "<tr><td> WiFi Cmera  connect to dvr, nvr වයිෆයි කැමරා එන්.වී.ආර්, ඩී .වී.ආර් වෙත සම්බන්ධ කිරීම</td><td>Rs. " + Ad + "</td><td>" + d_q + "</td><td>" + Ad + "x" + d_q + " = " + Ad * d_q + "</td></tr>";
+     showBill();
+    }
+   });
+   document.getElementById("e").addEventListener("keyup", function () {
+    if (this.value == "" || this.value == 0) {
+     eBill = "";
+     e_q = 0;
+     showBill();
+    } else {
+     e_q = this.value;
+     eBill = "<tr><td>Network Cable wiring  ඩේට ඒකකයක් වයරින් කිරීම</td><td>Rs. " + Ae + "</td><td>" + e_q + "</td><td>" + Ae + "x" + e_q + " = " + Ae * e_q + "</td></tr>";
+     showBill();
+    }
+   });
+   document.getElementById("f").addEventListener("keyup", function () {
+    if (this.value == "" || this.value == 0) {
+     fBill = "";
+     f_q = 0;
+     showBill();
+    } else {
+     f_q = this.value;
+     fBill = "<tr><td>Installation setup Connecting one camera  වයිෆයි එන්.වී.ආර සැකසුම සහ1කැමරාවක් සම්බන්ධකිරීම (wifi nvr)</td><td>Rs. " + Af + "</td><td>" + f_q + "</td><td>" + Af + "x" + f_q + " = " + Af * f_q + "</td></tr>";
+     showBill();
+    }
+   });
+      document.getElementById("fz").addEventListener("keyup", function () {
+    if (this.value == "" || this.value == 0) {
+     fzBill = "";
+     fz_q = 0;
+     showBill();
+    } else {
+     fz_q = this.value;
+     fzBill = "<tr><td>Device Connect   වයිෆයි  එන්.වී.ආර් දුරකථනයට සැකසුම</td><td>Rs. " + Afz + "</td><td>" + fz_q + "</td><td>" + Afz + "x" + fz_q + " = " + Afz * fz_q + "</td></tr>";
+     showBill();
+    }
+   });
+document.getElementById("g").addEventListener("keyup", function () {
+    if (this.value == "" || this.value == 0) {
+     gBill = "";
+     g_q = 0;
+     showBill();
+    } else {
+     g_q = this.value;
+     gBill = "<tr><td>WiFi NVR security box  Mounting වයිෆයි එන්.වී.ආර්  ආරක්ෂක පෙට්ටිය සවි කිරීම</td><td>Rs. " + Ag + "</td><td>" + g_q + "</td><td>" + Ag + "x" + g_q + " = " + g * g_q + "</td></tr>";
+     showBill();
+    }
+   });
+   document.getElementById("gz").addEventListener("keyup", function () {
+    if (this.value == "" || this.value == 0) {
+     gzBill = "";
+     gz_q = 0;
+     showBill();
+    } else {
+     gz_q = this.value;
+     gzBill = "<tr><td>Video Screen Mount 4m distens වීඩියෝ තිර සවි කිරීම මීටර් 4 දුර (TV / Monitor)</td>  d>Rs. " + Agz + "</td><td>" + gz_q + "</td><td>" + Agz + "x" + gz_q + " = " + Agz * gz_q + "</td></tr>";
+     showBill();
+    }
+   });
+document.getElementById("h").addEventListener("keyup", function () {
+    if (this.value == "" || this.value == 0) {
+     hBill = "";
+     h_q = 0;
+     showBill();
+    } else {
+     h_q = this.value;
+     hBill = "<tr><td> wall cutting or undergroung wiring බිත්ති කපා හෝ භූගතව වයරින් කිරීම (one man one day)</td><td>Rs. " + Ah + "</td><td>" + h_q + "</td><td>" + Ah + "x" + h_q + " = " + Ah * h_q + "</td></tr>";
+     showBill();
+    }
+   });
+document.getElementById("i").addEventListener("keyup", function () {
+    if (this.value == "" || this.value == 0) {
+     iBill = "";
+     i_q = 0;
+     showBill();
+    } else {
+     i_q = this.value;
+     iBill = "<tr><td>If the distance from one camera to another is more than 12 meters එක් කැමරාවක සිට තවත් කැමරාවකට දුර මීටර් 12 ට වඩා වැඩි නම් (1m)</td><td>Rs. " + Ai + "</td><td>" + i_q + "</td><td>" + Ai + "x" + i_q + " = " + Ai * i_q + "</td></tr>";
+     showBill();
+    }
+   });
+   
+
+
+   function showBill() {
+    document.getElementById("bill").innerHTML =  kachoriBill + vadapavBill + dBill + eBill + fBill + fzBill + gBill + gzBill + hBill + iBill  ;
+   <!--  document.getElementById("bill").innerHTML = smosaBill + kachoriBill + vadapavBill + dBill + eBill + fBill + gBill + hBill + iBil + jBill + kBill + lBill + mBill + nBill + oBill + pBill + qBill + rBill + sBill + tBill + uBill + vBill + wBill + xBill + yBill + zBill + aaBill + bbBill + ccBill + ddBill + eeBill + ffBill + ggBill + hhBill + iiBil + jjBill + kkBill + llBill + mmBill + nnBill + ooBill + ppBill + qqBill + rrBill + ssBill + ttBill + uuBill + vvBill + wwBill + xxBill + yyBill + zzBill+ aaaBill + bbbBill + cccBill + dddBill + eeeBill + fffBill + gggBill + hhhBill + iiiBil + jjjBill + kkkBill + lllBill + mmmBill + nnnBill + oooBill + pppBill + qqqBill + rrrBill + sssBill + tttBill + uuuBill + vvvBill + wwwBill + xxxBill + yyyBill + zzzBill + abBill + bbBill + cbBill + dbBill + ebBill + fbBill + gbBill + hbBill + ibBil + jbBill + kbBill + lbBill + mbBill + nbBill + obBill + pbBill + qbBill + rbBill + sbBill + tbBill + ubBill + vbBill + wbBill + xbBill + ybBill + zbBill + abbBill + bbbBill + cbbBill + dbbBill + ebbBill + fbbBill + gbbBill + hbbBill + ibbBil + jbbBill + kbbBill + lbbBill + mbbBill + nbbBill + obbBill + pbbBill + qbbBill + rbbBill + sbbBill + tbbBill + ubbBill + vbbBill + wbbBill + xbbBill + ybbBill + zbbBill+ aabbBill + bbbbBill + ccbbBill + ddbbBill + eebbBill + ffbbBill + ggbbBill;-->
+   document.getElementById("amount").innerHTML =  Kachori * kachori_q + AVadapav * vadapav_q + Ad * d_q + Ae * e_q + Af * f_q + Afz * fz_q + Ag * g_q + Agz * gz_q + Ah * h_q + Ai * i_q  ;
+   }
+   let div = document.querySelector(".container1");
+        let btn = document.querySelector(".download");
+        btn.addEventListener('click', () => {
+            html2pdf().from(div).save()
+        })
+		var password;
+		var correctpassword ="9651";
+		password=prompt('place enter:','');
+		if (password==correctpassword)
+		alert('password is corect click ok to enter...');
+		else
+		{
+		window.location = "https://ezvinet.000webhostapp.com/";
+		};
+		-->
+  </script>
+ </body>
+</html>
